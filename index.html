@@ -3,1291 +3,1560 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAISONÉ — Custom Clothing Studio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<title>MAISONÉ | Luxury Fashion</title>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 :root {
- --ink:#171714;
- --paper:#f5f2eb;
- --cream:#fffdf8;
- --gold:#b69a62;
- --muted:#77756e;
- --line:#e6e0d5;
+    --black:#171717;
+    --cream:#f7f5f0;
+    --gold:#b69b69;
+    --white:#ffffff;
+    --gray:#777;
 }
 
-* {box-sizing:border-box}
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body {
- margin:0;
- background:var(--paper);
- color:var(--ink);
- font-family:"DM Sans",sans-serif;
+    background:var(--cream);
+    color:var(--black);
+    font-family:'DM Sans',sans-serif;
 }
-button,input,select,textarea {font:inherit}
-button {cursor:pointer;border:0}
 
-.top {
- background:#171714;
- color:#fff;
- padding:12px 5%;
- display:flex;
- justify-content:space-between;
- font-size:12px;
- letter-spacing:1.5px;
+button,input,select {
+    font:inherit;
 }
-.top span:last-child {color:#d6c39b}
 
-.nav {
- height:78px;
- padding:0 5%;
- display:flex;
- align-items:center;
- justify-content:space-between;
- background:var(--cream);
- border-bottom:1px solid var(--line);
- position:sticky;
- top:0;
- z-index:5;
+button {
+    cursor:pointer;
 }
+
+header {
+    height:85px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    border-bottom:1px solid #eee;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
 .logo {
- font:700 30px "Playfair Display";
- letter-spacing:4px;
-}
-.logo small {
- display:block;
- font:10px "DM Sans";
- letter-spacing:3px;
- color:var(--muted);
- text-align:center;
-}
-.navlinks {display:flex;gap:24px}
-.navlinks button {
- background:none;
- color:var(--ink);
- font-size:13px;
-}
-.navright {display:flex;gap:10px}
-
-.pill {
- padding:11px 16px;
- background:var(--ink);
- color:#fff;
- border-radius:2px;
- font-size:12px;
- letter-spacing:1px;
-}
-.pill.light {
- background:transparent;
- color:var(--ink);
- border:1px solid var(--line);
+    font-family:'Playfair Display',serif;
+    font-size:30px;
+    letter-spacing:5px;
+    font-weight:600;
 }
 
-main {
- max-width:1250px;
- margin:auto;
- padding:35px 22px;
+nav {
+    display:flex;
+    gap:30px;
+}
+
+nav a {
+    text-decoration:none;
+    color:#222;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+nav a:hover {
+    color:var(--gold);
+}
+
+.header-actions {
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+.header-actions button {
+    background:none;
+    border:0;
+    font-size:13px;
 }
 
 .hero {
- background:#1b1b18;
- color:#fff;
- padding:65px 7%;
- display:grid;
- grid-template-columns:1.2fr .8fr;
- gap:25px;
- align-items:center;
- min-height:310px;
+    min-height:570px;
+    display:flex;
+    align-items:center;
+    padding:70px 10%;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.72),rgba(0,0,0,.08)),
+    url('https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1800')
+    center/cover;
+    color:white;
 }
-.eyebrow {
- color:#c9b17d;
- letter-spacing:3px;
- font-size:11px;
+
+.hero-content {
+    max-width:550px;
 }
+
+.hero small {
+    letter-spacing:5px;
+    color:#e4d0a7;
+}
+
 .hero h1 {
- font:700 clamp(38px,6vw,68px) "Playfair Display";
- line-height:1.05;
- margin:16px 0;
+    font-family:'Playfair Display',serif;
+    font-size:clamp(45px,7vw,85px);
+    font-weight:400;
+    line-height:1.1;
+    margin:25px 0;
 }
+
 .hero p {
- color:#c7c4bc;
- max-width:470px;
- line-height:1.8;
-}
-.hero-art {
- height:210px;
- border:1px solid #565247;
- display:grid;
- place-items:center;
- color:#c9b17d;
- font:italic 24px "Playfair Display";
- letter-spacing:4px;
+    color:#eee;
+    line-height:1.8;
+    max-width:420px;
 }
 
-.sectionhead {
- display:flex;
- justify-content:space-between;
- align-items:end;
- margin:42px 0 18px;
-}
-.sectionhead h2 {
- font:600 30px "Playfair Display";
- margin:0;
-}
-.muted {
- color:var(--muted);
- font-size:13px;
+.primary-btn {
+    background:var(--black);
+    color:white;
+    padding:15px 30px;
+    border:1px solid var(--black);
+    margin-top:25px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:12px;
 }
 
-.grid {
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:17px;
-}
-.product {
- background:var(--cream);
- border:1px solid var(--line);
- padding:12px;
-}
-.product .photo {
- height:190px;
- background:linear-gradient(145deg,#e7e1d5,#c9c1b4);
- display:grid;
- place-items:center;
- font:700 20px "Playfair Display";
- color:#777;
-}
-.product h3 {
- font-size:14px;
- margin:13px 0 5px;
-}
-.product .row {
- display:flex;
- justify-content:space-between;
- align-items:center;
-}
-.product button {
- margin-top:12px;
- width:100%;
+.primary-btn:hover {
+    background:var(--gold);
+    border-color:var(--gold);
 }
 
-.studio {
- background:var(--cream);
- border:1px solid var(--line);
- padding:22px;
- margin-top:30px;
+.hero .primary-btn {
+    background:white;
+    color:black;
+    border-color:white;
 }
-.studiohead {
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:15px;
- flex-wrap:wrap;
+
+.section {
+    padding:85px 8%;
 }
-.studiohead h2 {
- font:600 30px "Playfair Display";
- margin:0;
+
+.section-heading {
+    text-align:center;
+    margin-bottom:45px;
 }
-.studio-layout {
- display:grid;
- grid-template-columns:230px minmax(300px,1fr) 230px;
- gap:18px;
- margin-top:20px;
+
+.section-heading small {
+    color:var(--gold);
+    letter-spacing:4px;
 }
+
+.section-heading h2 {
+    font-family:'Playfair Display',serif;
+    font-size:42px;
+    font-weight:400;
+    margin:12px 0;
+}
+
+.section-heading p {
+    color:var(--gray);
+    font-size:14px;
+}
+
+.categories {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.category {
+    height:350px;
+    position:relative;
+    overflow:hidden;
+    background:#ddd;
+}
+
+.category img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.category:hover img {
+    transform:scale(1.06);
+}
+
+.category div {
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    color:white;
+}
+
+.category h3 {
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+}
+
+.category button {
+    margin-top:10px;
+    padding:10px 20px;
+    border:0;
+    background:white;
+}
+
+.products {
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.product-card {
+    background:white;
+    padding-bottom:20px;
+}
+
+.product-card img {
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    background:#eee;
+}
+
+.product-info {
+    padding:18px;
+}
+
+.product-info h3 {
+    font-family:'Playfair Display',serif;
+    font-size:19px;
+    font-weight:500;
+}
+
+.product-info p {
+    margin:9px 0;
+    font-size:14px;
+    color:var(--gray);
+}
+
+.product-info button {
+    width:100%;
+    padding:12px;
+    border:1px solid #222;
+    background:white;
+    margin-top:8px;
+    text-transform:uppercase;
+    font-size:11px;
+    letter-spacing:1px;
+}
+
+.product-info button:hover {
+    background:#171717;
+    color:white;
+}
+
+.custom-banner {
+    background:#202020;
+    color:white;
+    padding:85px 10%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.custom-banner h2 {
+    font-family:'Playfair Display',serif;
+    font-size:45px;
+    font-weight:400;
+}
+
+.custom-banner p {
+    color:#ccc;
+    margin-top:15px;
+}
+
+.custom-banner button {
+    background:white;
+    color:black;
+    border:0;
+    padding:17px 30px;
+}
+
+.page {
+    display:none;
+    min-height:70vh;
+}
+
+.page.active {
+    display:block;
+}
+
 .panel {
- border:1px solid var(--line);
- padding:16px;
- background:#fffefa;
-}
-.panel h3 {
- font-size:12px;
- letter-spacing:1.5px;
- text-transform:uppercase;
- margin:0 0 14px;
-}
-.field {margin-bottom:14px}
-.field label {
- display:block;
- font-size:11px;
- color:var(--muted);
- margin-bottom:6px;
-}
-.field input:not([type=color]),
-.field select,
-.field textarea {
- width:100%;
- padding:10px;
- border:1px solid var(--line);
- background:#fff;
- border-radius:2px;
- font-size:13px;
-}
-.field input[type=color] {
- width:100%;
- height:38px;
- border:1px solid var(--line);
- background:white;
-}
-.field input[type=range] {width:100%}
-
-.btnrow {
- display:flex;
- gap:7px;
- flex-wrap:wrap;
-}
-.btnrow button {
- padding:9px 11px;
- background:#efebe2;
- color:#25241f;
- font-size:11px;
-}
-.btnrow button.active {
- background:#1b1b18;
- color:white;
+    background:white;
+    max-width:1100px;
+    margin:40px auto;
+    padding:35px;
 }
 
-.action {
- width:100%;
- padding:12px;
- background:#191916;
- color:white;
- margin-top:7px;
- font-size:12px;
- letter-spacing:1px;
-}
-.action.alt {
- background:#eee9df;
- color:#191916;
+.panel h2 {
+    font-family:'Playfair Display',serif;
+    font-size:32px;
+    margin-bottom:25px;
 }
 
-.swatches {
- display:flex;
- gap:8px;
- flex-wrap:wrap;
-}
-.swatch {
- width:25px;
- height:25px;
- border-radius:50%;
- border:2px solid white;
- box-shadow:0 0 0 1px #bbb;
-}
-.swatch.active {
- box-shadow:0 0 0 2px var(--gold);
+.designer-layout {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
 }
 
-.stage {
- min-height:500px;
- background:radial-gradient(circle at 50% 42%,#fff 0,#f0ede6 70%);
- position:relative;
- overflow:hidden;
- border:1px solid var(--line);
-}
-#shirt3d {
- width:100%;
- height:500px;
- display:block;
- touch-action:none;
-}
-.stagehint {
- position:absolute;
- bottom:12px;
- left:0;
- right:0;
- text-align:center;
- color:#8b887f;
- font-size:11px;
- pointer-events:none;
+.preview-area {
+    background:#eeeae2;
+    min-height:480px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
 }
 
-.cartbox,.adminbox {
- background:var(--cream);
- border:1px solid var(--line);
- padding:20px;
- margin-top:30px;
-}
-.hidden {display:none!important}
-
-.cartitem {
- display:flex;
- justify-content:space-between;
- border-bottom:1px solid var(--line);
- padding:12px 0;
- font-size:13px;
- gap:10px;
-}
-.formgrid {
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:12px;
-}
-.notice {
- padding:12px;
- background:#f1ede4;
- color:#5c5548;
- font-size:12px;
- line-height:1.6;
- margin:12px 0;
-}
-.footer {
- background:#171714;
- color:#aaa;
- padding:35px 5%;
- margin-top:55px;
- font-size:12px;
- display:flex;
- justify-content:space-between;
- gap:20px;
- flex-wrap:wrap;
+#designCanvas {
+    width:100%;
+    max-width:430px;
+    height:auto;
+    touch-action:none;
 }
 
-@media(max-width:900px) {
- .studio-layout {grid-template-columns:1fr 1fr}
- .stage {grid-column:1/-1;grid-row:1}
- .grid {grid-template-columns:repeat(2,1fr)}
- .hero {grid-template-columns:1fr}
- .hero-art {display:none}
+.controls label {
+    display:block;
+    margin:18px 0 8px;
+    font-size:13px;
+    font-weight:600;
 }
-@media(max-width:560px) {
- .nav {padding:0 4%;height:65px}
- .logo {font-size:22px}
- .navlinks {gap:9px}
- .navlinks button {font-size:11px}
- .navright .light {display:none}
- main {padding:20px 12px}
- .studio {padding:12px}
- .studio-layout {grid-template-columns:1fr}
- .stage {grid-column:auto;grid-row:auto}
- #shirt3d {height:390px}
- .panel {padding:13px}
- .grid {gap:9px}
- .product .photo {height:140px}
- .formgrid {grid-template-columns:1fr}
+
+.controls input,
+.controls select {
+    width:100%;
+    padding:12px;
+    border:1px solid #ddd;
+    background:white;
+}
+
+.controls button {
+    padding:12px;
+    background:#171717;
+    color:white;
+    border:0;
+    margin-top:12px;
+}
+
+.controls .secondary {
+    background:#eee;
+    color:#111;
+}
+
+.cart-item {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+    border-bottom:1px solid #eee;
+    gap:15px;
+}
+
+.cart-item button {
+    border:0;
+    background:#222;
+    color:white;
+    padding:8px 12px;
+}
+
+.form-grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+    padding:14px;
+    border:1px solid #ddd;
+    width:100%;
+}
+
+.form-grid textarea {
+    grid-column:1/-1;
+}
+
+.admin-table {
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+}
+
+.admin-table th,
+.admin-table td {
+    padding:13px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
+
+.admin-table select {
+    padding:7px;
+}
+
+.admin-table button {
+    padding:7px;
+    background:#222;
+    color:white;
+    border:0;
+}
+
+.empty {
+    text-align:center;
+    padding:45px;
+    color:#888;
+}
+
+footer {
+    background:#171717;
+    color:white;
+    text-align:center;
+    padding:50px 15px;
+}
+
+footer h2 {
+    font-family:'Playfair Display',serif;
+    letter-spacing:5px;
+    margin-bottom:15px;
+}
+
+footer p {
+    color:#aaa;
+    font-size:13px;
+    line-height:2;
+}
+
+.toast {
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#171717;
+    color:white;
+    padding:15px 22px;
+    z-index:300;
+    display:none;
+}
+
+@media(max-width:850px) {
+    nav {
+        gap:12px;
+    }
+
+    .products {
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .designer-layout {
+        grid-template-columns:1fr;
+    }
+
+    .categories {
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px) {
+    header {
+        padding:0 4%;
+        height:75px;
+    }
+
+    .logo {
+        font-size:21px;
+        letter-spacing:3px;
+    }
+
+    nav {
+        display:none;
+    }
+
+    .section {
+        padding:55px 5%;
+    }
+
+    .products {
+        gap:12px;
+    }
+
+    .product-card img {
+        height:210px;
+    }
+
+    .product-info {
+        padding:12px;
+    }
+
+    .panel {
+        margin:15px;
+        padding:20px;
+    }
+
+    .form-grid {
+        grid-template-columns:1fr;
+    }
+
+    .admin-table {
+        display:block;
+        overflow-x:auto;
+    }
 }
 </style>
-
-<script type="importmap">
-{
- "imports":{
-  "three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-  "three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
- }
-}
-</script>
 </head>
 
 <body>
 
-<div class="top">
- <span>MAISONÉ · CUSTOM CLOTHING</span>
- <span>DESIGN YOUR OWN. WEAR YOUR STYLE.</span>
-</div>
+<header>
+    <div class="logo">MAISONÉ</div>
 
-<header class="nav">
- <div class="logo">
-  MAISONÉ
-  <small>STUDIO & APPAREL</small>
- </div>
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('shop')">Shop</a>
+        <a href="#" onclick="showPage('designer')">Customize</a>
+        <a href="#" onclick="showPage('admin')">Admin</a>
+    </nav>
 
- <nav class="navlinks">
-  <button onclick="go('home')">Home</button>
-  <button onclick="go('shop')">Shop</button>
-  <button onclick="go('studio')">Custom Studio</button>
- </nav>
-
- <div class="navright">
-  <button class="pill light" onclick="go('admin')">Admin</button>
-  <button class="pill" onclick="go('cart')">
-   Bag (<span id="cartCount">0</span>)
-  </button>
- </div>
+    <div class="header-actions">
+        <button onclick="showPage('cart')">BAG (<span id="cartCount">0</span>)</button>
+    </div>
 </header>
 
-<main>
 
-<section id="home">
- <div class="hero">
-  <div>
-   <div class="eyebrow">THE PERSONAL COLLECTION</div>
-   <h1>Wear what<br>you imagine.</h1>
-   <p>
-    Choose your fit, make your design, and preview your custom piece
-    in an interactive 3D studio.
-   </p>
-   <button class="pill" onclick="go('studio')">
-    START CREATING →
-   </button>
-  </div>
+<!-- HOME -->
 
-  <div class="hero-art">YOUR STYLE · YOUR STORY</div>
- </div>
+<div id="home" class="page active">
 
- <div class="sectionhead">
-  <div>
-   <div class="eyebrow">CURATED FOR YOU</div>
-   <h2>Explore the collection</h2>
-  </div>
-  <span class="muted">Demo collection</span>
- </div>
-
- <div class="grid" id="productGrid"></div>
+<section class="hero">
+    <div class="hero-content">
+        <small>THE NEW COLLECTION</small>
+        <h1>Elegance in Every Detail.</h1>
+        <p>
+            Discover timeless fashion and express your
+            individuality with our premium collections.
+        </p>
+        <button class="primary-btn" onclick="showPage('shop')">
+            Explore Collection
+        </button>
+    </div>
 </section>
 
-<section id="shop" class="hidden">
- <div class="sectionhead">
-  <div>
-   <div class="eyebrow">MAISONÉ COLLECTION</div>
-   <h2>Shop essentials</h2>
-  </div>
- </div>
- <div class="grid" id="shopGrid"></div>
+<section class="section">
+    <div class="section-heading">
+        <small>DISCOVER OUR WORLD</small>
+        <h2>Our Collections</h2>
+        <p>Find your own expression of style.</p>
+    </div>
+
+    <div class="categories">
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=700">
+            <div>
+                <h3>Women</h3>
+                <button onclick="showPage('shop')">Explore</button>
+            </div>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=700">
+            <div>
+                <h3>Men</h3>
+                <button onclick="showPage('shop')">Explore</button>
+            </div>
+        </div>
+
+        <div class="category">
+            <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=700">
+            <div>
+                <h3>Streetwear</h3>
+                <button onclick="showPage('shop')">Explore</button>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<section id="studio" class="studio hidden">
+<section class="section">
+    <div class="section-heading">
+        <small>CURATED FOR YOU</small>
+        <h2>Featured Products</h2>
+    </div>
 
- <div class="studiohead">
-  <div>
-   <div class="eyebrow">MAISONÉ CUSTOM STUDIO</div>
-   <h2>Build your own piece.</h2>
-   <div class="muted">
-    Interactive 3D preview · Upload artwork · Personalise every detail
-   </div>
-  </div>
-
-  <div class="btnrow">
-   <button class="active" id="frontBtn" onclick="setSide('front')">FRONT</button>
-   <button id="backBtn" onclick="setSide('back')">BACK</button>
-  </div>
- </div>
-
- <div class="studio-layout">
-
-  <aside class="panel">
-   <h3>01 · Product</h3>
-
-   <div class="field">
-    <label>GARMENT</label>
-    <select id="garment">
-     <option value="tee">Classic T-shirt</option>
-     <option value="oversized">Oversized T-shirt</option>
-     <option value="long">Long sleeve</option>
-     <option value="hoodie">Hoodie (visual demo)</option>
-    </select>
-   </div>
-
-   <div class="field">
-    <label>SIZE</label>
-    <select id="size">
-     <option>S</option>
-     <option selected>M</option>
-     <option>L</option>
-     <option>XL</option>
-     <option>XXL</option>
-    </select>
-   </div>
-
-   <div class="field">
-    <label>COLOUR</label>
-    <div class="swatches" id="swatches"></div>
-   </div>
-
-   <div class="field">
-    <label>PRINT AREA</label>
-    <select id="printArea">
-     <option value="front">Front chest</option>
-     <option value="back">Back centre</option>
-    </select>
-   </div>
-
-   <div class="notice">
-    Drag the 3D model to rotate. Scroll or pinch to zoom.
-    Use the FRONT/BACK buttons to inspect each side.
-   </div>
-  </aside>
-
-  <div class="stage">
-   <canvas id="shirt3d"></canvas>
-   <div class="stagehint">DRAG TO ROTATE · SCROLL TO ZOOM</div>
-  </div>
-
-  <aside class="panel">
-   <h3>02 · Your design</h3>
-
-   <div class="field">
-    <label>UPLOAD ARTWORK (PNG / JPG)</label>
-    <input type="file" id="artFile" accept="image/png,image/jpeg,image/webp">
-   </div>
-
-   <div class="field">
-    <label>ADD TEXT</label>
-    <input id="designText" maxlength="28" placeholder="Your text here">
-   </div>
-
-   <div class="field">
-    <label>TEXT COLOUR</label>
-    <input type="color" id="textColor" value="#171717">
-   </div>
-
-   <div class="field">
-    <label>DESIGN SCALE</label>
-    <input type="range" id="designScale" min="35" max="120" value="75">
-   </div>
-
-   <div class="field">
-    <label>VERTICAL POSITION</label>
-    <input type="range" id="designY" min="-55" max="55" value="0">
-   </div>
-
-   <div class="btnrow">
-    <button onclick="clearDesign()">CLEAR</button>
-    <button onclick="downloadPreview()">SAVE PREVIEW</button>
-   </div>
-
-   <div class="notice" id="priceLabel">
-    Estimated demo price: ₹699
-   </div>
-
-   <button class="action" onclick="addCustomToCart()">
-    ADD CUSTOM PIECE TO BAG
-   </button>
-  </aside>
-
- </div>
+    <div class="products" id="homeProducts"></div>
 </section>
 
-<section id="cart" class="cartbox hidden">
+<section class="custom-banner">
+    <div>
+        <h2>Your Style. Your Creation.</h2>
+        <p>Create something that is uniquely yours.</p>
+    </div>
 
- <div class="sectionhead">
-  <h2>Your bag</h2>
-  <button class="pill light" onclick="go('shop')">
-   CONTINUE SHOPPING
-  </button>
- </div>
-
- <div id="cartItems"></div>
-
- <div class="sectionhead">
-  <strong id="cartTotal">Total: ₹0</strong>
- </div>
-
- <h3>Checkout details</h3>
-
- <div class="formgrid">
-  <div class="field">
-   <label>FULL NAME</label>
-   <input id="custName" placeholder="Name">
-  </div>
-
-  <div class="field">
-   <label>PHONE</label>
-   <input id="custPhone" inputmode="tel" placeholder="Phone number">
-  </div>
-
-  <div class="field">
-   <label>EMAIL (OPTIONAL)</label>
-   <input id="custEmail" type="email" placeholder="Email">
-  </div>
-
-  <div class="field">
-   <label>PIN CODE</label>
-   <input id="custPin" placeholder="PIN code">
-  </div>
- </div>
-
- <div class="field">
-  <label>DELIVERY ADDRESS</label>
-  <textarea id="custAddress" rows="3"
-   placeholder="House name, street, town, district"></textarea>
- </div>
-
- <button class="action" onclick="placeOrder()">
-  PLACE DEMO ORDER · CASH ON DELIVERY
- </button>
-
- <div class="notice">
-  Demo only: order details are saved in this browser's local storage.
-  They are not sent to a shop owner or shared between devices.
- </div>
+    <button onclick="showPage('designer')">
+        DESIGN YOUR T-SHIRT
+    </button>
 </section>
 
-<section id="admin" class="adminbox hidden">
- <div class="sectionhead">
-  <div>
-   <div class="eyebrow">STORE MANAGEMENT</div>
-   <h2>Admin dashboard</h2>
-  </div>
- </div>
+</div>
 
- <div class="notice">
-  Demo dashboard. Orders are visible only in this browser.
-  Do not enter real customer data in this demo.
- </div>
 
- <div id="adminOrders"></div>
+<!-- SHOP -->
+
+<div id="shop" class="page">
+<section class="section">
+
+    <div class="section-heading">
+        <small>THE MAISONÉ COLLECTION</small>
+        <h2>Shop All Products</h2>
+    </div>
+
+    <div class="products" id="shopProducts"></div>
+
 </section>
+</div>
 
-</main>
 
-<footer class="footer">
- <span>© 2026 MAISONÉ STUDIO · DEMO STORE</span>
- <span>DESIGN YOUR OWN. WEAR YOUR STYLE.</span>
- <span>Made for creative expression.</span>
+<!-- DESIGNER -->
+
+<div id="designer" class="page">
+
+<div class="panel">
+
+    <h2>Create Your Own T-shirt</h2>
+
+    <div class="designer-layout">
+
+        <div class="preview-area">
+            <canvas id="designCanvas" width="430" height="480"></canvas>
+        </div>
+
+        <div class="controls">
+
+            <label>T-shirt Colour</label>
+            <select id="shirtColor" onchange="drawCanvas()">
+                <option value="#ffffff">White</option>
+                <option value="#171717">Black</option>
+                <option value="#c9b99b">Beige</option>
+                <option value="#8c969f">Grey</option>
+                <option value="#263b57">Navy Blue</option>
+            </select>
+
+            <label>Select Size</label>
+            <select id="shirtSize">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+            </select>
+
+            <label>Upload Your Design</label>
+            <input type="file" id="designUpload" accept="image/*">
+
+            <label>Add Custom Text</label>
+            <input type="text" id="designText" placeholder="Enter your text">
+
+            <label>Text Colour</label>
+            <input type="color" id="textColor" value="#000000">
+
+            <label>Design Size</label>
+            <input type="range" id="designSize" min="30" max="180" value="100">
+
+            <label>Rotation</label>
+            <input type="range" id="designRotation" min="-180" max="180" value="0">
+
+            <button onclick="addText()">ADD TEXT</button>
+
+            <button class="secondary" onclick="clearDesign()">
+                CLEAR DESIGN
+            </button>
+
+            <button onclick="addCustomToCart()">
+                ADD CUSTOM T-SHIRT TO BAG
+            </button>
+
+            <p style="font-size:12px;color:#888;margin-top:15px;">
+                Tip: Drag your uploaded design or text
+                inside the T-shirt preview to reposition it.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+
+<!-- CART -->
+
+<div id="cart" class="page">
+
+<div class="panel">
+
+    <h2>Your Shopping Bag</h2>
+
+    <div id="cartItems"></div>
+
+    <h3 style="margin-top:25px;">
+        Total: ₹<span id="cartTotal">0</span>
+    </h3>
+
+    <button class="primary-btn" onclick="showPage('checkout')">
+        PROCEED TO CHECKOUT
+    </button>
+
+</div>
+</div>
+
+
+<!-- CHECKOUT -->
+
+<div id="checkout" class="page">
+
+<div class="panel">
+
+    <h2>Checkout</h2>
+
+    <form id="checkoutForm">
+
+        <div class="form-grid">
+
+            <input required id="customerName" placeholder="Full Name">
+
+            <input required id="customerPhone" type="tel"
+            placeholder="Phone Number" pattern="[0-9]{10}"
+            title="Enter a 10-digit phone number">
+
+            <input required id="customerEmail" type="email"
+            placeholder="Email Address">
+
+            <input required id="customerPin" maxlength="6"
+            pattern="[0-9]{6}" placeholder="PIN Code">
+
+            <textarea required id="customerAddress"
+            placeholder="Full Delivery Address"></textarea>
+
+        </div>
+
+        <label style="display:block;margin-top:20px;">
+            Payment Method
+        </label>
+
+        <select id="paymentMethod"
+        style="padding:13px;width:100%;margin-top:10px;">
+            <option value="Cash on Delivery">Cash on Delivery</option>
+        </select>
+
+        <button class="primary-btn" type="submit">
+            PLACE ORDER
+        </button>
+
+    </form>
+
+</div>
+</div>
+
+
+<!-- ADMIN -->
+
+<div id="admin" class="page">
+
+<div class="panel">
+
+    <h2>Admin Dashboard</h2>
+
+    <p style="color:#888;margin-bottom:20px;">
+        MAISONÉ Store Management — Demo
+    </p>
+
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-bottom:30px;">
+
+        <div style="background:#f3f0e9;padding:25px;flex:1;">
+            <small>Total Orders</small>
+            <h2 id="totalOrders">0</h2>
+        </div>
+
+        <div style="background:#f3f0e9;padding:25px;flex:1;">
+            <small>Total Sales</small>
+            <h2>₹<span id="totalSales">0</span></h2>
+        </div>
+
+    </div>
+
+    <h3 style="margin-bottom:20px;">Customer Orders</h3>
+
+    <div id="adminOrders"></div>
+
+    <hr style="margin:35px 0;border:0;border-top:1px solid #eee;">
+
+    <h3>Manage Products</h3>
+
+    <form id="productForm" style="margin-top:20px;">
+
+        <div class="form-grid">
+
+            <input required id="newProductName"
+            placeholder="Product Name">
+
+            <input required id="newProductPrice"
+            type="number" min="1" placeholder="Price">
+
+            <input required id="newProductImage"
+            type="url" placeholder="Product Image URL">
+
+        </div>
+
+        <button class="primary-btn" type="submit">
+            ADD PRODUCT
+        </button>
+
+    </form>
+
+    <div id="adminProducts" style="margin-top:25px;"></div>
+
+</div>
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+    <h2>MAISONÉ</h2>
+    <p>DESIGN YOUR OWN. WEAR YOUR STYLE.</p>
+    <p>Luxury Fashion • Custom Creations</p>
+    <p style="margin-top:20px;">
+        © 2026 MAISONÉ. Demo Store.
+    </p>
 </footer>
 
-<script type="module">
+<div class="toast" id="toast"></div>
 
-import * as THREE from 'three';
-import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 
-const $ = id => document.getElementById(id);
+<script>
 
-const colours = [
- ['Cloud White','#f4f1e9'],
- ['Jet Black','#202020'],
- ['Stone','#aaa397'],
- ['Forest','#344c3e'],
- ['Navy','#29384c'],
- ['Rose','#b9827c'],
- ['Sky','#9bb8c7']
+// =================================
+// MAISONÉ - ECOMMERCE DEMO
+// =================================
+
+const defaultProducts = [
+
+{
+    id:1,
+    name:"Essential White Tee",
+    price:799,
+    category:"Men",
+    image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600"
+},
+
+{
+    id:2,
+    name:"Classic Black Tee",
+    price:899,
+    category:"Men",
+    image:"https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600"
+},
+
+{
+    id:3,
+    name:"Minimal Oversized Tee",
+    price:1099,
+    category:"Streetwear",
+    image:"https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=600"
+},
+
+{
+    id:4,
+    name:"Premium Casual Wear",
+    price:1299,
+    category:"Women",
+    image:"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600"
+}
+
 ];
 
-let shirtColour = colours[0][1];
-let side = 'front';
-let uploaded = null;
-
-let cart = JSON.parse(localStorage.getItem('maisone_cart_v2') || '[]');
-let orders = JSON.parse(localStorage.getItem('maisone_orders_v2') || '[]');
-
-const products = [
- ['Essential Tee','₹599','Everyday cotton-inspired essential'],
- ['Studio Oversized','₹799','Relaxed silhouette'],
- ['Mono Long Sleeve','₹899','Minimal long sleeve'],
- ['Signature Hoodie','₹1,199','Layer up in comfort']
-];
-
-function productCards(target) {
- $(target).innerHTML = products.map((p,i) => `
-  <article class="product">
-   <div class="photo">
-    ${['ESSENTIAL','OVERSIZED','MONO','STUDIO'][i]}
-   </div>
-   <h3>${p[0]}</h3>
-   <div class="row">
-    <span class="muted">${p[2]}</span>
-    <b>${p[1]}</b>
-   </div>
-   <button class="pill" onclick="go('studio')">CUSTOMISE</button>
-  </article>
- `).join('');
+function loadData(key,fallback) {
+    try {
+        const data=localStorage.getItem(key);
+        return data ? JSON.parse(data) : fallback;
+    } catch(e) {
+        return fallback;
+    }
 }
 
-productCards('productGrid');
-productCards('shopGrid');
+let products=loadData("maisone_products",defaultProducts);
+let cart=loadData("maisone_cart",[]);
+let orders=loadData("maisone_orders",[]);
 
-function go(id) {
- ['home','shop','studio','cart','admin'].forEach(x => {
-  $(x).classList.toggle('hidden',x !== id);
- });
-
- if(id === 'cart') renderCart();
- if(id === 'admin') renderAdmin();
-
- window.scrollTo({top:0,behavior:'smooth'});
+function saveData() {
+    localStorage.setItem("maisone_products",JSON.stringify(products));
+    localStorage.setItem("maisone_cart",JSON.stringify(cart));
+    localStorage.setItem("maisone_orders",JSON.stringify(orders));
 }
 
-window.go = go;
+function showToast(message) {
+    const toast=document.getElementById("toast");
+    toast.textContent=message;
+    toast.style.display="block";
 
-
-// THREE.JS 3D SCENE
-
-const scene = new THREE.Scene();
-scene.background = new THREE.Color('#f0ede6');
-
-const camera = new THREE.PerspectiveCamera(35,1,.1,100);
-camera.position.set(0,.4,7);
-
-const renderer = new THREE.WebGLRenderer({
- canvas:$('shirt3d'),
- antialias:true,
- alpha:false
-});
-
-renderer.setPixelRatio(Math.min(devicePixelRatio,2));
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-
-const controls = new OrbitControls(camera,renderer.domElement);
-controls.enableDamping = true;
-controls.target.set(0,.1,0);
-controls.minDistance = 4;
-controls.maxDistance = 9;
-controls.maxPolarAngle = Math.PI*.82;
-
-scene.add(new THREE.HemisphereLight(0xffffff,0x77716a,2));
-
-const key = new THREE.DirectionalLight(0xffffff,2.3);
-key.position.set(3,5,6);
-scene.add(key);
-
-const fill = new THREE.DirectionalLight(0xffffff,1);
-fill.position.set(-4,2,-4);
-scene.add(fill);
-
-const group = new THREE.Group();
-scene.add(group);
-
-function mat(color) {
- return new THREE.MeshStandardMaterial({
-  color,
-  roughness:.82,
-  side:THREE.DoubleSide
- });
+    setTimeout(()=>{
+        toast.style.display="none";
+    },2500);
 }
 
-const shirtMat = mat(shirtColour);
-const darkMat = mat('#dedbd3');
+// PAGE NAVIGATION
 
-function roundedBox(w,h,d,r,material) {
- const shape = new THREE.Shape();
+function showPage(page) {
 
- shape.moveTo(-w/2+r,-h/2);
- shape.lineTo(w/2-r,-h/2);
- shape.quadraticCurveTo(w/2,-h/2,w/2,-h/2+r);
- shape.lineTo(w/2,h/2-r);
- shape.quadraticCurveTo(w/2,h/2,w/2-r,h/2);
- shape.lineTo(-w/2+r,h/2);
- shape.quadraticCurveTo(-w/2,h/2,-w/2,h/2-r);
- shape.lineTo(-w/2,-h/2+r);
- shape.quadraticCurveTo(-w/2,-h/2,-w/2+r,-h/2);
+    document.querySelectorAll(".page").forEach(p=>{
+        p.classList.remove("active");
+    });
 
- const geo = new THREE.ExtrudeGeometry(shape,{
-  depth:d,
-  bevelEnabled:true,
-  bevelSegments:3,
-  steps:1,
-  bevelSize:r*.35,
-  bevelThickness:r*.35
- });
+    document.getElementById(page).classList.add("active");
 
- geo.center();
+    if(page==="cart") renderCart();
+    if(page==="admin") renderAdmin();
 
- return new THREE.Mesh(geo,material);
+    window.scrollTo(0,0);
 }
 
-const torso = roundedBox(2.25,2.65,.22,.22,shirtMat);
-torso.position.y = 0;
-group.add(torso);
+// PRODUCT DISPLAY
 
-function sleeve(x,rot=0) {
- const mesh = roundedBox(.78,1.25,.2,.16,shirtMat);
- mesh.position.set(x,.68,0);
- mesh.rotation.z = rot;
- group.add(mesh);
- return mesh;
+function productCard(product) {
+
+    return `
+    <div class="product-card">
+
+        <img src="${escapeHTML(product.image)}"
+        alt="${escapeHTML(product.name)}"
+        onerror="this.src='https://placehold.co/500x600?text=MAISONE'">
+
+        <div class="product-info">
+
+            <h3>${escapeHTML(product.name)}</h3>
+
+            <p>₹${Number(product.price).toLocaleString("en-IN")}</p>
+
+            <button onclick="addToCart(${Number(product.id)})">
+                ADD TO BAG
+            </button>
+
+        </div>
+
+    </div>`;
 }
 
-let sleeves = [
- sleeve(-1.35,.45),
- sleeve(1.35,-.45)
-];
+function renderProducts() {
 
-const collar = new THREE.Mesh(
- new THREE.TorusGeometry(.36,.075,12,48),
- darkMat
-);
+    document.getElementById("homeProducts").innerHTML=
+    products.slice(0,4).map(productCard).join("");
 
-collar.position.set(0,1.27,.13);
-collar.scale.set(1,.62,1);
-group.add(collar);
+    document.getElementById("shopProducts").innerHTML=
+    products.map(productCard).join("");
 
-const hood = new THREE.Mesh(
- new THREE.TorusGeometry(.43,.16,12,40,Math.PI),
- shirtMat
-);
-
-hood.position.set(0,1.05,-.08);
-hood.rotation.x = Math.PI/2;
-hood.visible = false;
-group.add(hood);
-
-
-// DESIGN CANVAS
-
-const designCanvas = document.createElement('canvas');
-designCanvas.width = 512;
-designCanvas.height = 512;
-
-const ctx = designCanvas.getContext('2d');
-
-const texture = new THREE.CanvasTexture(designCanvas);
-texture.colorSpace = THREE.SRGBColorSpace;
-
-const designMat = new THREE.MeshBasicMaterial({
- map:texture,
- transparent:true,
- side:THREE.DoubleSide,
- depthWrite:false
-});
-
-const designPlane = new THREE.Mesh(
- new THREE.PlaneGeometry(1.12,1.12),
- designMat
-);
-
-designPlane.position.set(0,.25,.145);
-group.add(designPlane);
-
-const backPlane = new THREE.Mesh(
- new THREE.PlaneGeometry(1.12,1.12),
- designMat
-);
-
-backPlane.position.set(0,.25,-.145);
-backPlane.rotation.y = Math.PI;
-group.add(backPlane);
-
-
-function redraw() {
-
- ctx.clearRect(0,0,512,512);
-
- if(uploaded) {
-  const max = Number($('designScale').value)/100*380;
-
-  let ratio = Math.min(
-   max/uploaded.width,
-   max/uploaded.height
-  );
-
-  let w = uploaded.width*ratio;
-  let h = uploaded.height*ratio;
-
-  ctx.drawImage(
-   uploaded,
-   (512-w)/2,
-   256-h/2+Number($('designY').value)*2,
-   w,
-   h
-  );
- }
-
- const t = $('designText').value.trim();
-
- if(t) {
-  ctx.fillStyle = $('textColor').value;
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-
-  ctx.font =
-   `700 ${Math.round(38*Number($('designScale').value)/75)}px Arial`;
-
-  ctx.fillText(
-   t,
-   256,
-   420+Number($('designY').value)*1.2,
-   450
-  );
- }
-
- texture.needsUpdate = true;
 }
 
-['designText','textColor','designScale','designY'].forEach(id => {
- $(id).addEventListener('input',redraw);
-});
-
-$('artFile').addEventListener('change',e => {
-
- const f = e.target.files[0];
- if(!f) return;
-
- if(f.size > 5*1024*1024) {
-  alert('Please choose an image under 5 MB.');
-  e.target.value = '';
-  return;
- }
-
- const url = URL.createObjectURL(f);
- const im = new Image();
-
- im.onload = () => {
-  uploaded = im;
-  redraw();
-  URL.revokeObjectURL(url);
- };
-
- im.src = url;
-});
-
-function resize() {
-
- const c = $('shirt3d');
-
- const w = c.clientWidth;
- const h = c.clientHeight;
-
- renderer.setSize(w,h,false);
-
- camera.aspect = w/h;
- camera.updateProjectionMatrix();
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g,c=>({
+        "&":"&amp;",
+        "<":"&lt;",
+        ">":"&gt;",
+        '"':"&quot;",
+        "'":"&#39;"
+    })[c]);
 }
-
-window.addEventListener('resize',resize);
-resize();
-
-function animate() {
- requestAnimationFrame(animate);
- controls.update();
- renderer.render(scene,camera);
-}
-
-animate();
-
-
-// FRONT / BACK
-
-function setSide(s) {
-
- side = s;
-
- group.rotation.y = s === 'back' ? Math.PI : 0;
-
- $('frontBtn').classList.toggle('active',s === 'front');
- $('backBtn').classList.toggle('active',s === 'back');
-
- $('printArea').value = s;
-}
-
-window.setSide = setSide;
-
-$('printArea').addEventListener('change',e => {
- setSide(e.target.value);
-});
-
-
-// COLOUR SELECTION
-
-$('swatches').innerHTML = colours.map((c,i) => `
- <button
-  class="swatch ${i===0?'active':''}"
-  title="${c[0]}"
-  style="background:${c[1]}"
-  onclick="chooseColour(${i},this)">
- </button>
-`).join('');
-
-window.chooseColour = (i,el) => {
-
- shirtColour = colours[i][1];
-
- shirtMat.color.set(shirtColour);
-
- document.querySelectorAll('.swatch').forEach(x => {
-  x.classList.remove('active');
- });
-
- el.classList.add('active');
-};
-
-
-// GARMENT SELECTION
-
-$('garment').addEventListener('change',() => {
-
- const g = $('garment').value;
-
- torso.scale.set(
-  g === 'oversized' ? 1.12 : 1,
-  g === 'long' ? 1.05 : 1,
-  1
- );
-
- sleeves.forEach(s => {
-  s.scale.y = g === 'long' ? 1.45 : 1;
-  s.visible = true;
- });
-
- hood.visible = g === 'hoodie';
-
- $('priceLabel').textContent =
-  'Estimated demo price: ₹' +
-  ({tee:699,oversized:799,long:899,hoodie:1299}[g]);
-});
-
-
-// CLEAR DESIGN
-
-window.clearDesign = () => {
-
- uploaded = null;
-
- $('artFile').value = '';
- $('designText').value = '';
-
- redraw();
-};
-
-
-// DOWNLOAD PREVIEW
-
-window.downloadPreview = () => {
-
- redraw();
-
- const a = document.createElement('a');
-
- a.download = 'maisone-design-preview.png';
- a.href = designCanvas.toDataURL('image/png');
-
- a.click();
-};
-
-
-// PRICING
-
-function currentPrice() {
-
- return {
-  tee:699,
-  oversized:799,
-  long:899,
-  hoodie:1299
- }[$('garment').value];
-}
-
-
-// ADD CUSTOM PRODUCT TO CART
-
-window.addCustomToCart = () => {
-
- if(!uploaded && !$('designText').value.trim()) {
-
-  if(!confirm('No artwork or text added. Add a plain garment?')) {
-   return;
-  }
- }
-
- const item = {
-  id:Date.now(),
-  name:$('garment').selectedOptions[0].text,
-  price:currentPrice(),
-  size:$('size').value,
-  colour:shirtColour,
-  side,
-  printArea:$('printArea').value,
-  text:$('designText').value,
-  artwork:uploaded ? 'Uploaded artwork' : 'No artwork',
-  preview:designCanvas.toDataURL('image/png')
- };
-
- cart.push(item);
-
- saveCart();
-
- alert('Custom piece added to your bag.');
-
- go('cart');
-};
-
 
 // CART
 
-function saveCart() {
+function addToCart(id) {
 
- localStorage.setItem(
-  'maisone_cart_v2',
-  JSON.stringify(cart)
- );
+    const product=products.find(p=>p.id===id);
 
- $('cartCount').textContent = cart.length;
+    if(!product) return;
+
+    cart.push({
+        ...product,
+        cartId:Date.now()+Math.random(),
+        size:"M",
+        color:"Standard",
+        custom:false
+    });
+
+    saveData();
+    updateCartCount();
+    showToast("Added to shopping bag!");
 }
 
-saveCart();
-
-window.removeCartItem = id => {
-
- cart = cart.filter(x => x.id !== id);
-
- saveCart();
- renderCart();
-};
-
+function updateCartCount() {
+    document.getElementById("cartCount").textContent=cart.length;
+}
 
 function renderCart() {
 
- const el = $('cartItems');
+    const container=document.getElementById("cartItems");
 
- if(!cart.length) {
+    if(cart.length===0) {
+        container.innerHTML='<div class="empty">Your bag is currently empty.</div>';
+    } else {
 
-  el.innerHTML = '<p class="muted">Your bag is empty.</p>';
+        container.innerHTML=cart.map(item=>`
 
-  $('cartTotal').textContent = 'Total: ₹0';
+        <div class="cart-item">
 
-  return;
- }
+            <div>
+                <strong>${escapeHTML(item.name)}</strong>
+                <p style="font-size:12px;color:#888;margin-top:5px;">
+                    Size: ${escapeHTML(item.size)}
+                    • Colour: ${escapeHTML(item.color)}
+                    ${item.custom?"• Custom design":""}
+                </p>
+                <strong>₹${Number(item.price)}</strong>
+            </div>
 
- el.innerHTML = cart.map(x => `
-  <div class="cartitem">
+            <button onclick="removeCart('${item.cartId}')">
+                REMOVE
+            </button>
 
-   <span>
-    <b>${x.name}</b><br>
-    <span class="muted">
-     ${x.size} · ${x.colour} · ${x.printArea} · ${x.text || x.artwork}
-    </span>
-   </span>
+        </div>
 
-   <span>
-    ₹${x.price}
-    <button onclick="removeCartItem(${x.id})">×</button>
-   </span>
+        `).join("");
+    }
 
-  </div>
- `).join('');
-
- $('cartTotal').textContent =
-  'Total: ₹' + cart.reduce((a,b) => a+b.price,0);
+    document.getElementById("cartTotal").textContent=
+    cart.reduce((sum,item)=>sum+Number(item.price),0).toLocaleString("en-IN");
 }
 
+function removeCart(id) {
+
+    cart=cart.filter(item=>String(item.cartId)!==String(id));
+
+    saveData();
+    renderCart();
+    updateCartCount();
+}
+
+// T-SHIRT DESIGNER
+
+const canvas=document.getElementById("designCanvas");
+const ctx=canvas.getContext("2d");
+
+let uploadedImage=null;
+let designText="";
+let designX=215;
+let designY=230;
+let dragging=false;
+let selected=false;
+
+function drawCanvas() {
+
+    const color=document.getElementById("shirtColor").value;
+
+    ctx.clearRect(0,0,430,480);
+
+    // T-shirt body
+
+    ctx.fillStyle=color;
+    ctx.strokeStyle="#999";
+    ctx.lineWidth=2;
+
+    ctx.beginPath();
+
+    ctx.moveTo(145,85);
+    ctx.lineTo(95,105);
+    ctx.lineTo(35,155);
+    ctx.lineTo(75,215);
+    ctx.lineTo(110,190);
+    ctx.lineTo(110,410);
+    ctx.lineTo(320,410);
+    ctx.lineTo(320,190);
+    ctx.lineTo(355,215);
+    ctx.lineTo(395,155);
+    ctx.lineTo(335,105);
+    ctx.lineTo(285,85);
+
+    ctx.lineTo(260,110);
+    ctx.quadraticCurveTo(215,145,170,110);
+    ctx.closePath();
+
+    ctx.fill();
+    ctx.stroke();
+
+    // Neck
+
+    ctx.beginPath();
+    ctx.arc(215,90,40,0,Math.PI);
+    ctx.stroke();
+
+    // Design
+
+    ctx.save();
+
+    ctx.translate(designX,designY);
+
+    const size=Number(document.getElementById("designSize").value);
+    const rotation=Number(document.getElementById("designRotation").value);
+
+    ctx.rotate(rotation*Math.PI/180);
+
+    if(uploadedImage) {
+
+        const ratio=Math.min(
+            size/uploadedImage.width,
+            size/uploadedImage.height
+        );
+
+        const w=uploadedImage.width*ratio;
+        const h=uploadedImage.height*ratio;
+
+        ctx.drawImage(uploadedImage,-w/2,-h/2,w,h);
+
+    }
+
+    if(designText) {
+
+        ctx.fillStyle=document.getElementById("textColor").value;
+
+        ctx.font=`bold ${Math.max(12,size/4)}px Arial`;
+        ctx.textAlign="center";
+
+        ctx.fillText(designText,0,uploadedImage?size/2+20:0);
+
+    }
+
+    ctx.restore();
+
+}
+
+document.getElementById("designUpload").addEventListener("change",function(e){
+
+    const file=e.target.files[0];
+
+    if(!file) return;
+
+    if(!file.type.startsWith("image/")) {
+        showToast("Please select an image.");
+        return;
+    }
+
+    if(file.size>2*1024*1024) {
+        showToast("Image must be under 2 MB for this demo.");
+        return;
+    }
+
+    const reader=new FileReader();
+
+    reader.onload=function(event){
+
+        uploadedImage=new Image();
+
+        uploadedImage.onload=()=>{
+            drawCanvas();
+            showToast("Design uploaded!");
+        };
+
+        uploadedImage.src=event.target.result;
+
+    };
+
+    reader.readAsDataURL(file);
+
+});
+
+document.getElementById("designSize").addEventListener("input",drawCanvas);
+document.getElementById("designRotation").addEventListener("input",drawCanvas);
+document.getElementById("shirtColor").addEventListener("change",drawCanvas);
+document.getElementById("textColor").addEventListener("input",drawCanvas);
+
+function addText() {
+
+    designText=document.getElementById("designText").value.trim();
+
+    if(!designText) {
+        showToast("Enter some text first.");
+        return;
+    }
+
+    drawCanvas();
+}
+
+function clearDesign() {
+
+    uploadedImage=null;
+    designText="";
+
+    document.getElementById("designUpload").value="";
+    document.getElementById("designText").value="";
+
+    designX=215;
+    designY=230;
+
+    drawCanvas();
+    showToast("Design cleared.");
+}
+
+// DRAG DESIGN
+
+function pointerPosition(e) {
+
+    const rect=canvas.getBoundingClientRect();
+
+    return {
+        x:(e.clientX-rect.left)*canvas.width/rect.width,
+        y:(e.clientY-rect.top)*canvas.height/rect.height
+    };
+
+}
+
+canvas.addEventListener("pointerdown",e=>{
+
+    const p=pointerPosition(e);
+
+    if(Math.abs(p.x-designX)<110 && Math.abs(p.y-designY)<110) {
+
+        dragging=true;
+        selected=true;
+
+        canvas.setPointerCapture(e.pointerId);
+
+    }
+
+});
+
+canvas.addEventListener("pointermove",e=>{
+
+    if(!dragging) return;
+
+    const p=pointerPosition(e);
+
+    designX=Math.max(110,Math.min(320,p.x));
+    designY=Math.max(130,Math.min(360,p.y));
+
+    drawCanvas();
+
+});
+
+canvas.addEventListener("pointerup",()=>{
+    dragging=false;
+});
+
+canvas.addEventListener("pointercancel",()=>{
+    dragging=false;
+});
+
+// ADD CUSTOM PRODUCT
+
+function addCustomToCart() {
+
+    if(!uploadedImage && !designText) {
+        showToast("Please upload an image or add text.");
+        return;
+    }
+
+    const designImage=canvas.toDataURL("image/png");
+
+    cart.push({
+
+        id:Date.now(),
+        cartId:Date.now()+Math.random(),
+
+        name:"Custom Designed T-shirt",
+        price:999,
+
+        size:document.getElementById("shirtSize").value,
+
+        color:document.getElementById("shirtColor")
+        .selectedOptions[0].textContent,
+
+        custom:true,
+        design:designImage
+
+    });
+
+    saveData();
+    updateCartCount();
+
+    showToast("Custom T-shirt added to bag!");
+
+    showPage("cart");
+
+}
 
 // CHECKOUT
 
-window.placeOrder = () => {
+document.getElementById("checkoutForm").addEventListener("submit",function(e){
 
- if(!cart.length) {
-  return alert('Your bag is empty.');
- }
+    e.preventDefault();
 
- const name = $('custName').value.trim();
- const phone = $('custPhone').value.trim();
- const address = $('custAddress').value.trim();
+    if(cart.length===0) {
+        showToast("Your shopping bag is empty.");
+        showPage("shop");
+        return;
+    }
 
- if(!name || !phone || !address) {
-  return alert('Please enter your name, phone and delivery address.');
- }
+    const order={
 
- const order = {
+        id:"MS"+Date.now().toString().slice(-8),
 
-  id:'MS'+Date.now(),
+        customer:{
+            name:document.getElementById("customerName").value,
+            phone:document.getElementById("customerPhone").value,
+            email:document.getElementById("customerEmail").value,
+            pin:document.getElementById("customerPin").value,
+            address:document.getElementById("customerAddress").value
+        },
 
-  date:new Date().toLocaleString(),
+        payment:document.getElementById("paymentMethod").value,
 
-  name,
-  phone,
+        items:[...cart],
 
-  email:$('custEmail').value,
+        total:cart.reduce((sum,item)=>sum+Number(item.price),0),
 
-  pin:$('custPin').value,
+        status:"Pending",
 
-  address,
+        date:new Date().toLocaleString()
 
-  items:cart,
+    };
 
-  total:cart.reduce((a,b) => a+b.price,0),
+    orders.unshift(order);
 
-  status:'New'
- };
+    cart=[];
 
- orders.unshift(order);
+    saveData();
+    updateCartCount();
 
- localStorage.setItem(
-  'maisone_orders_v2',
-  JSON.stringify(orders)
- );
+    document.getElementById("checkoutForm").reset();
 
- cart = [];
+    alert(
+        "ORDER PLACED SUCCESSFULLY!\n\n"+
+        "Order ID: "+order.id+
+        "\nTotal: ₹"+order.total+
+        "\nPayment: Cash on Delivery"
+    );
 
- saveCart();
+    showPage("home");
 
- alert('Demo order placed! Order ID: '+order.id);
-
- go('admin');
-};
-
-
-// UPDATE ORDER STATUS
-
-window.updateStatus = (id,status) => {
-
- orders = orders.map(o =>
-  o.id === id ? {...o,status} : o
- );
-
- localStorage.setItem(
-  'maisone_orders_v2',
-  JSON.stringify(orders)
- );
-
- renderAdmin();
-};
-
+});
 
 // ADMIN DASHBOARD
 
 function renderAdmin() {
 
- const el = $('adminOrders');
+    document.getElementById("totalOrders").textContent=orders.length;
 
- if(!orders.length) {
+    document.getElementById("totalSales").textContent=
+    orders.reduce((sum,o)=>sum+Number(o.total),0).toLocaleString("en-IN");
 
-  el.innerHTML = '<p class="muted">No demo orders yet.</p>';
+    const container=document.getElementById("adminOrders");
 
-  return;
- }
+    if(orders.length===0) {
 
- el.innerHTML = orders.map(o => `
+        container.innerHTML='<div class="empty">No customer orders yet.</div>';
 
-  <div class="cartbox">
+    } else {
 
-   <div class="row">
-    <b>${o.id} · ${o.name}</b>
-    <b>₹${o.total}</b>
-   </div>
+        container.innerHTML=`
 
-   <p class="muted">
-    ${o.date} · ${o.phone} · ${o.address}
-   </p>
+        <table class="admin-table">
 
-   ${o.items.map(i => `
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Status</th>
+                <th>Details</th>
+            </tr>
+        </thead>
 
-    <div class="cartitem">
+        <tbody>
 
-     <span>
-      ${i.name} · ${i.size} · ${i.colour}<br>
+        ${orders.map(order=>`
 
-      <span class="muted">
-       Print: ${i.printArea} ·
-       Text: ${i.text || '—'} ·
-       ${i.artwork}
-      </span>
-     </span>
+        <tr>
 
-     <img
-      src="${i.preview}"
-      alt="Design preview"
-      style="width:65px;height:65px;object-fit:contain;background:#eee"
-     >
+            <td>${escapeHTML(order.id)}</td>
 
-    </div>
+            <td>${escapeHTML(order.customer.name)}</td>
 
-   `).join('')}
+            <td>₹${Number(order.total)}</td>
 
-   <div class="field">
-    <label>ORDER STATUS</label>
+            <td>
 
-    <select onchange="updateStatus('${o.id}',this.value)">
+                <select onchange="updateOrderStatus('${order.id}',this.value)">
 
-     ${['New','Confirmed','In production','Shipped','Completed','Cancelled'].map(s => `
-      <option ${o.status===s?'selected':''}>${s}</option>
-     `).join('')}
+                    ${["Pending","Confirmed","Processing","Shipped","Delivered","Cancelled"].map(s=>
+                    `<option ${order.status===s?"selected":""}>${s}</option>`).join("")}
 
-    </select>
-   </div>
+                </select>
 
-  </div>
+            </td>
 
- `).join('');
+            <td>
+                <button onclick="viewOrder('${order.id}')">
+                    VIEW
+                </button>
+            </td>
+
+        </tr>
+
+        `).join("")}
+
+        </tbody>
+
+        </table>
+
+        `;
+
+    }
+
+    renderAdminProducts();
+
 }
 
+function updateOrderStatus(id,status) {
+
+    const order=orders.find(o=>o.id===id);
+
+    if(order) {
+
+        order.status=status;
+        saveData();
+
+        showToast("Order status updated.");
+
+        renderAdmin();
+
+    }
+
+}
+
+function viewOrder(id) {
+
+    const order=orders.find(o=>o.id===id);
+
+    if(!order) return;
+
+    let details=
+    "ORDER: "+order.id+
+    "\nCUSTOMER: "+order.customer.name+
+    "\nPHONE: "+order.customer.phone+
+    "\nEMAIL: "+order.customer.email+
+    "\nADDRESS: "+order.customer.address+
+    "\nPIN: "+order.customer.pin+
+    "\nPAYMENT: "+order.payment+
+    "\n\nPRODUCTS:\n";
+
+    order.items.forEach(item=>{
+
+        details+=
+        "\n"+item.name+
+        " | Size: "+item.size+
+        " | Colour: "+item.color+
+        " | ₹"+item.price;
+
+    });
+
+    details+="\n\nTOTAL: ₹"+order.total;
+
+    alert(details);
+
+}
+
+// ADMIN PRODUCT MANAGEMENT
+
+document.getElementById("productForm").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const product={
+
+        id:Date.now(),
+
+        name:document.getElementById("newProductName").value,
+
+        price:Number(document.getElementById("newProductPrice").value),
+
+        image:document.getElementById("newProductImage").value,
+
+        category:"New Collection"
+
+    };
+
+    products.push(product);
+
+    saveData();
+
+    this.reset();
+
+    renderProducts();
+    renderAdminProducts();
+
+    showToast("Product added successfully!");
+
+});
+
+function renderAdminProducts() {
+
+    const container=document.getElementById("adminProducts");
+
+    container.innerHTML=products.map(p=>`
+
+        <div class="cart-item">
+
+            <div>
+                <strong>${escapeHTML(p.name)}</strong>
+                <p>₹${Number(p.price)}</p>
+            </div>
+
+            <button onclick="deleteProduct(${Number(p.id)})">
+                DELETE
+            </button>
+
+        </div>
+
+    `).join("");
+
+}
+
+function deleteProduct(id) {
+
+    if(!confirm("Delete this product?")) return;
+
+    products=products.filter(p=>p.id!==id);
+
+    saveData();
+
+    renderProducts();
+    renderAdminProducts();
+
+    showToast("Product deleted.");
+
+}
+
+// INITIALIZATION
+
+renderProducts();
+drawCanvas();
+updateCartCount();
+
 </script>
+
 </body>
 </html>
